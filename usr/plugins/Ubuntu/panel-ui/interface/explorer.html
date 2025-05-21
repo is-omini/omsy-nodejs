@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Explorateur de fichiers</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #eee; padding: 2rem; }
+    a { color: #00ffcc; text-decoration: none; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Dossier : <span id="current-path"></span></h2>
+  <ul id="file-list"></ul>
+
+  <script>
+    let currentPath = '';
+
+    function loadDirectory(path = '') {
+      fetch(`/Getter?plugin=Ubuntu&page=/Finder&path=${encodeURIComponent(path)}`)
+        .then(res => res.json())
+        .then(data => {
+          currentPath = data.currentPath;
+          document.getElementById('current-path').textContent = currentPath || '/';
+          const fileList = document.getElementById('file-list');
+          fileList.innerHTML = '';
+
+          if (currentPath) {
+            const parentPath = currentPath.split('/').slice(0, -1).join('/');
+            fileList.innerHTML += `<li><a href="#" onclick="loadDirectory('${parentPath}')">📁 .. (parent)</a></li>`;
+          }
+
+          data.items.forEach(item => {
+            if (item.isDirectory) {
+              fileList.innerHTML += `<li><a href="#" onclick="loadDirectory('${item.path}')">📁 ${item.name}</a></li>`;
+            } else {
+              fileList.innerHTML += `<li>📄 ${item.name}</li>`;
+            }
+          });
+        });
+    }
+
+    loadDirectory();
+  </script>
+</body>
+</html>

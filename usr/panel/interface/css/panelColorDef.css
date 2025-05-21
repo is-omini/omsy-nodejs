@@ -1,0 +1,30 @@
+:root {
+	--color-primary-000: hsl(240 7.3% 8%);
+	--color-primary-00: #2c3138;
+	--color-primary-0: #3c444d;
+
+	--color-primary-1: #353d44;
+	--color-primary-2: #20a53a;
+	--color-primary-3: #198a2f;
+	--color-primary-4: #1e4a20;
+}
+/*
+:root {
+	--color-primary-000: hsl(240 7.3% 8%);
+	--color-primary-00: hsl(240 5.3% 26.1%);
+	--color-primary-0: hsl(240 3.7% 15.9%);
+	--color-primary-1: hsl(240 5.9% 10%);
+	--color-primary-2: rgb(234 76 137);
+	--color-primary-3: rgb(187 61 110);
+	--color-primary-4: rgb(111 36 65);
+}*/
+:root {
+	--color-primary-000: #030611;
+	--color-primary-00: #1d1f26;
+	--color-primary-0: #2a2c35;
+	--color-primary-1: #14161e;
+	
+	--color-primary-2: #234bd4;
+	--color-primary-3: #14308e;
+	--color-primary-4: #0d1f5e;
+}

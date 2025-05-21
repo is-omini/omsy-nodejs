@@ -1,0 +1,14 @@
+[
+    {
+        "id": "Ubuntu",
+        "name": "Ubuntu",
+        "icon": null,
+        "thumbnail": "https://companieslogo.com/img/orig/ubuntu-ace93e08.png?t=1720244494"
+    },
+    {
+        "id": "Apache",
+        "name": "Apache",
+        "icon": null,
+        "thumbnail": "https://www.ibm.com/content/dam/adobe-cms/instana/media_logo/Apache.component.complex-narrative-xl.ts=1691081464532.png/content/adobe-cms/fr/fr/products/instana/supported-technologies/apache-web-server-monitoring/_jcr_content/root/table_of_contents/body/content_section_styled/content-section-body/complex_narrative/logoimage"
+    }
+]
